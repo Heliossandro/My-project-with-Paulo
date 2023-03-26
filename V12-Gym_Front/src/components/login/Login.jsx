@@ -1,5 +1,5 @@
 import logo from './../../image/logo.png'
-import login from './../../image/imgLogin.jpeg'
+import imgLogin from './../../image/imgLogin.jpeg'
 
 import * as S from './stylesLogin'
 
@@ -31,7 +31,7 @@ function Login(){
                                         <S.buttonCriarConta>Criar Conta</S.buttonCriarConta>
                                    </div>
                                     <div> 
-                                        <a href="">Esqueceu a senha</a> 
+                                        <a href="">Esqueceu a senha?</a> 
                                     </div>
                                </section>
                             </form>
