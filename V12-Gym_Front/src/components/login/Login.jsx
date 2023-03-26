@@ -18,7 +18,7 @@ function Login(){
                         <S.containerform>
                             <form action="">
                                <div>
-                                   <label htmlFor="nome">Nome Completo</label>
+                                   <label htmlFor="nome">Email</label>
                                    <input type="email" id='nome' placeholder='Insira o seu Email' required/>
                                </div>
                                <div>
