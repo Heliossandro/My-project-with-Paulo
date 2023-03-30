@@ -1,5 +1,5 @@
-import logo from './../../image/logo.png'
-import imgLogin from './../../image/imgLogin.jpeg'
+import logo from './../../../image/logo.png'
+import imgLogin from './../../../image/imgLogin.jpeg'
 
 import * as S from './stylesLogin'
 
@@ -33,7 +33,7 @@ function Login(){
                                     <div> 
                                         <a href="">Esqueceu a senha?</a> 
                                     </div>
-                               </section>
+                               </section>   
                             </form>
                         </S.containerform>
                 </S.text>
