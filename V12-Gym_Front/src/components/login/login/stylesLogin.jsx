@@ -40,7 +40,7 @@ export const text = styled.section`
 export const containerImage = styled.section`
     background-color: #000000;
     width: 50%;
-    border-radius: 0 1rem 1rem 0;
+    border-radius: 0 1rem 1rem 0;   
     
     img{
         width: 100%;

@@ -1,13 +1,19 @@
 import { Login } from "./components/login/login/Login"
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { CadastroGerente } from "./components/login/cadastroDeGerentes/CadastroGerente"
 
 
 function App() {
 
   return (
-    
-     <main className='principal'>
-       <Login/>
-     </main>
+    <BrowserRouter>
+      
+      <Routes>
+        <Route path='/' element={<Login/>}/>
+        <Route path="/cadastroGerente" element={<CadastroGerente/>}/>
+      </Routes>
+         
+    </BrowserRouter>
     
   )
 }

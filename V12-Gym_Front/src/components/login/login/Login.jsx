@@ -1,5 +1,6 @@
 import logo from './../../../image/logo.png'
 import imgLogin from './../../../image/imgLogin.jpeg'
+import { Link } from 'react-router-dom'
 
 import * as S from './stylesLogin'
 
@@ -27,8 +28,11 @@ function Login(){
                                </div>
                                <section>
                                    <div>
-                                        <S.buttonEntrar>Entrar</S.buttonEntrar>
+                                        <S.buttonEntrar>Entrar</S.buttonEntrar>                                       
+                                        <Link to="/cadastroGerente"> 
                                         <S.buttonCriarConta>Criar Conta</S.buttonCriarConta>
+                                        </Link>
+                            
                                    </div>
                                     <div> 
                                         <a href="">Esqueceu a senha?</a> 
