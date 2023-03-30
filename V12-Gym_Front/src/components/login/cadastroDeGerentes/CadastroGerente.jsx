@@ -1,7 +1,9 @@
-export * as A './StylesCadastroGerente.jsx'
+export * as A from './StylesCadastroGerente.jsx'
 function CadastroGerente() {
     return(
-            <A.></A.>
+            <S.ConteinerConteiner>
+                
+            </S.ConteinerConteiner>
 
     )
     
