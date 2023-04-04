@@ -1,30 +1,24 @@
-import { Login } from "./components/login/login/Login"
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { CadastroGerente } from "./components/login/cadastroDeGerentes/CadastroGerente"
-import { HourglassMedium } from "phosphor-react"
-import { home } from "./components/home/home"
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
+import {Login} from './components/login/login/Login'
+import { CadastroGerente } from './components/login/cadastroDeGerentes/CadastroGerente';
+import { Home } from './components/pages/home/Home';
 
 function App() {
 
   return (
-   
-    <home/>
+   <div>
+    <BrowserRouter>
+
+      <Routes>
+        <Route path='/' element={<Login/>}/>
+        <Route path='/cadastroGerente' element={<CadastroGerente/>}/>
+        <Route path='/home' element={<Home/>}/>
+      </Routes>
+    </BrowserRouter>
+
+   </div>
   )
 }
 
-export default App
-{/* <BrowserRouter>
-       
-      <Routes>
-        <Route path='/' element={<Login/>}/>
-        <Route path="/cadastroGerente" element={<CadastroGerente/>}/>
-      </Routes>
-
-      <Routes>
-        <Route path= '/' element={<CadastroGerente/>}/>
-        <Route path= '/Login' element={<Login/>}/>
-      </Routes>
-      
-         
-    </BrowserRouter>*/}
+export default App;

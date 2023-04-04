@@ -28,7 +28,7 @@ function Login(){
                                </div>
                                <section>
                                <div>
-                                <Link to="/pagInicial">
+                                <Link to="/">
                                     <S.buttonEntrar>Entrar</S.buttonEntrar>    
                                 </Link>
                                                                                
