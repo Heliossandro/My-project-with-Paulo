@@ -27,11 +27,14 @@ function Login(){
                                    <input type="password" id='senha' placeholder='Insira a sua Senha' required/>
                                </div>
                                <section>
-                                   <div>
-                                        <S.buttonEntrar>Entrar</S.buttonEntrar>                                       
-                                        <Link to="/cadastroGerente"> 
-                                        <S.buttonCriarConta>Criar Conta</S.buttonCriarConta>
-                                        </Link>
+                               <div>
+                                <Link to="/pagInicial">
+                                    <S.buttonEntrar>Entrar</S.buttonEntrar>    
+                                </Link>
+                                                                               
+                                <Link to="/cadastroGerente"> 
+                                    <S.buttonCriarConta>Criar Conta</S.buttonCriarConta>
+                                </Link>
                             
                                    </div>
                                     <div> 

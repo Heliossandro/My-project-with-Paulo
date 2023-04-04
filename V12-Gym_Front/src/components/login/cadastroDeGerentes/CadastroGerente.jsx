@@ -2,6 +2,8 @@ import * as A from './StylesCadastroGerente.jsx'
 import * as S from '../login/stylesLogin'
 import logo from "../../../image/logo.png"
 import img from "../../../image/imgLogin.jpeg";
+import { Link } from 'react-router-dom'
+
 function CadastroGerente() {
     return(
 
@@ -35,6 +37,10 @@ function CadastroGerente() {
 
                         <div>
                             <button>Criar Conta</button>
+                        <Link to = "/login">
+                            <button>Voltar</button>
+                        </Link>
+                            
                         </div>
                     </form>
                 </div>
