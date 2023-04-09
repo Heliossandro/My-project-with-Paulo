@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 
+
 export const container = styled.main`
     width: 100%;
     height: 100vh;
     display: flex;
 `
-
 
 export const containerContent = styled.section`
     display: flex;
@@ -16,6 +16,7 @@ export const containerContent = styled.section`
 `
 
 export const header = styled.header`
+
     display: flex;
     justify-content: right;
     align-items: center;
@@ -29,8 +30,10 @@ export const header = styled.header`
         font-size: 1.1rem;
         color: #656565;
     }
-`
+
+
 
 export const content = styled.div`
+
 
 `
