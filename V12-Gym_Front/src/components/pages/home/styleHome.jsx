@@ -36,9 +36,9 @@ a{
 `
 export const navbar= styled.div`
 
-width:100%
-height: 60px
-max-width: 1200px
+width:100%;
+height: 60px;
+max-width: 1200px;
 margin: 0 auto;
 display: flex;
 align-items: center;
