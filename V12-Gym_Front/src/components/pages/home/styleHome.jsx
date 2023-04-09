@@ -7,12 +7,10 @@ export const container = styled.main`
     display: flex;
 `
 
-
 export const containerContent = styled.section`
     display: flex;
     flex-direction: column;
     width: 100%;
-
 `
 
 export const header = styled.header`
@@ -21,7 +19,6 @@ export const header = styled.header`
     align-items: center;
     height: 4rem;
     width: 100%;
-    heigth: 100%;
     padding: 0 2rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.271);  
 
