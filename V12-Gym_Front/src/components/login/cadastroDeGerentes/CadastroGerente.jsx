@@ -17,22 +17,22 @@ function CadastroGerente() {
                     <form action="">
                         <div>
                             <label htmlFor="nome">Nome Completo</label>
-                            <input type="text" name='nomeCompleto' id='nome' required/>
+                            <input type="text" name='nomeCompleto' id='nome' required placeholder='Nome Completo'/>
                         </div>
 
                         <div>
                             <label htmlFor="email">Email</label>
-                            <input type="email" name='email' id='email' required/>
+                            <input type="email" name='email' id='email' required placeholder='Seu Email'/>
                         </div>
 
                         <div>
                             <label htmlFor="tel">Telefone</label>
-                            <input type="number" name='telefone' id='tel' required/>
+                            <input type="number" name='telefone' id='tel' required placeholder='Nº Telefone'/>
                         </div>
 
                         <div>
                             <label htmlFor="senha">Senha</label>
-                            <input type="password" name='password' id='senha' required/>
+                            <input type="password" name='password' id='senha' required placeholder='Sua Senha'/>
                         </div>
 
                         <div>

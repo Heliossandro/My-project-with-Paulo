@@ -24,7 +24,8 @@ export const Container = styled.main`
         width: 50%;
     }
 `
-    export const ContainerLogo = styled.div`
+
+export const ContainerLogo = styled.div`
         display: flex;
         justify-content: center ;
         align-items: center;
@@ -36,59 +37,60 @@ export const Container = styled.main`
 
     `
 export const ConteudoDireita = styled.section`
-width: 50%;
-border-radius: 0 1rem 1rem 0;
-div{
-width: 100%;
-height: 31rem;
-}
-img{
-width: 100%;
-height: 100%;
-object-fit: cover ;
-border-radius: 0 1rem 1rem 0;   
-}
+    width: 50%;
+    border-radius: 0 1rem 1rem 0;
+    div{
+        width: 100%;
+        height: 31rem;
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover ;
+        border-radius: 0 1rem 1rem 0;   
+    }
 `
 
 export const containerform = styled.div`
-display:flex;
-flex-direction: column;
-justify-content:center;
-align-items: center ;
-width: 50%;
-
-label{
-    font-size: 14px;
-}
-
-div{
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
-    width: 19rem;
-}
+    justify-content: center;
+    align-items: center ;
+    width: 50%;
 
-form div>input{
-margin-top: .5rem;
-width: 100%;
-height: 2rem;
-background: #FAFAFA;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 7px;
-border: none;
-outline: none;
-padding-left: .5rem;
-}
+    label{
+        font-size: 14px;
+    }
 
-button{
-background-color: black;
-height: 1.8rem;
-width: 100%;
-border: none;
-color: #ffffff;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: .3rem;
-margin: .7rem 0 0 0;
-transition: all .4s;
-}
+    form div{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: .8rem;
+        width: 19rem;
+    }
+
+    form div > input{
+        margin-top: .5rem;
+        width: 100%;
+        height: 2rem;
+        background: #FAFAFA;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 7px;
+        border: none;
+        outline: none;
+        padding-left: .5rem;
+    }
+
+    button{
+        background-color: black;
+        height: 1.8rem;
+        width: 100%;
+        border: none;
+        color: #ffffff;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: .3rem;
+        margin: .7rem 0 0 0;
+        transition: all .4s;
+    }
 `
