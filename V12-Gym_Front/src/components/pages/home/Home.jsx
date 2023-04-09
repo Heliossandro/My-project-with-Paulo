@@ -7,6 +7,7 @@ function Home(){
     return(
         <S.container>
 
+
             <SideBar/>
             
             <S.containerContent>
@@ -22,6 +23,7 @@ function Home(){
             </S.containerContent>
 
         </S.container>
+        
     )
 }
 
