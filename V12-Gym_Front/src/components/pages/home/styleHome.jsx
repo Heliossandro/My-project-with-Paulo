@@ -28,7 +28,7 @@ export const header = styled.header`
         font-size: 1.1rem;
         color: #656565;
     }
-
+`
 
 
 export const content = styled.div`
