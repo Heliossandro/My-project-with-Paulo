@@ -15,7 +15,9 @@ export const containerLeft = styled.section`
         width: 4rem;
         text-decoration: none;
         padding: .8rem;
+        border: 1px solid red;
     }
+    
     .config{
         margin: 1rem;
     }

@@ -22,9 +22,8 @@ export const header = styled.header`
     align-items: center;
     height: 4rem;
     width: 100%;
-    heigth: 100%;
     padding: 0 2rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.271);  
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.271);  
 
     h1{
         font-size: 1.1rem;

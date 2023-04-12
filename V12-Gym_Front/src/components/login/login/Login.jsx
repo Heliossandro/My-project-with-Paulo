@@ -3,6 +3,8 @@ import imgLogin from './../../../image/imgLogin.jpeg'
 import { Link } from 'react-router-dom'
 
 import * as S from './stylesLogin'
+import { Home } from '../../pages/home/Home'
+import { sideBar } from '../../sideBar/sideBarStyles'
 
 
 function Login(){
@@ -28,7 +30,7 @@ function Login(){
                                </div>
                                <section>
                                <div>
-                                <Link to="/">
+                                <Link to="/home">
                                     <S.buttonEntrar>Entrar</S.buttonEntrar>    
                                 </Link>
                                                                                
