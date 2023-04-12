@@ -29,7 +29,23 @@ export const header = styled.header`
     h1{
         font-size: 1.1rem;
         color: #656565;
+        padding: 0 .5rem;
     }
+    div{
+        display: flex;  
+    }
+
+    i{
+        color: #656565;
+        transform: scale(1.3);
+
+    }
+    a{
+       display: flex;
+       text-decoration: none;
+    }
+
+
 
 `
 

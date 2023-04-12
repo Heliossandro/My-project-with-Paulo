@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export const containerLeft = styled.section`
     width: 6rem;
-    heigth: 100%;
-    border-right: 1px solid #cbcbcb; 
+    height: 100%; 
+    box-shadow: 0px 0px 20px #8d8d8d;
 
     a{
         color: #656565;
@@ -16,6 +16,16 @@ export const containerLeft = styled.section`
         text-decoration: none;
         padding: .8rem;
     }
+    .config{
+        margin: 1rem;
+    }
+    p{
+        font-size: .8rem;
+    }
+    i{
+        transform: scale(1.5);
+        
+    }
 `
 
 export const sideBar = styled.aside`
@@ -25,10 +35,14 @@ export const sideBar = styled.aside`
     align-items: center;
     flex-direction: column;
     gap: 1rem;
-    
     padding-top: 4rem;
-
+    
+    i{
+        transform: scale(1.5);
+        
+    }
     p{
         font-size: .8rem;
     }
+    
 `

@@ -1,54 +1,54 @@
 import * as S from './sideBarStyles'
-import {GiPerson} from 'react-icons/fa'
-import {FaMoneyCheck} from 'react-icons/fa'
-import {SiShopee} from 'react-icons/fa'
-import {BsFillClockFill} from 'react-icons/fa'
-import {GrPlan} from 'react-icons/fa'
-import {BsFillCreditCardFill} from 'react-icons/fa'
-import {GoGraph} from 'react-icons/fa'
-import {HiDocument} from 'react-icons/fa'
-import {IoMdSettings} from 'react-icons/fa'
+import {FaMale} from 'react-icons/fa'
+import { FaListAlt } from 'react-icons/fa'
+import { FaPoll } from 'react-icons/fa'
+import { FaStore } from "react-icons/fa"
+import { FaMoneyCheck } from "react-icons/fa"
+import { AiFillSetting } from "react-icons/ai"
+import {BsClockFill} from "react-icons/bs"
+import {IoDocumentTextOutline} from "react-icons/io5"
+
 
 function SideBar() {
     return(
         <S.containerLeft>
                 <S.sideBar>
                     <a href="/atleta">
-                        <i><GiPerson/></i>
+                        <i><FaMale/></i>
                         <p>Atletas</p>
                     </a>
                     <a href="#">
-                        <i><FaMoneyCheck/></i>
+                        <i><FaStore/></i>
                         <p>Artigos</p>
                     </a>
                     <a href="#">
-                        <i><SiShopee/></i>
+                        <i><FaMale/></i>
                         <p>Preçário</p>
                     </a>
                     <a href="#">
-                        <i><BsFillClockFill/></i>
+                        <i><BsClockFill/></i>
                         <p>Horário</p>
                     </a>
                     <a href="#">
-                        <i><GrPlan/></i>
+                        <i><FaListAlt/></i>
                         <p>Planos</p>
                     </a>
                     <a href="#">
-                        <i><BsFillCreditCardFill/></i>
+                        <i><FaMoneyCheck/></i>
                         <p>Pagamento</p>
                     </a>
                     <a href="#">
-                        <i><GoGraph/></i>
+                        <i><FaPoll/></i>
                         <p>Estatística</p>
                     </a>
                     <a href="#">
-                        <i><HiDocument/></i>
+                        <i><IoDocumentTextOutline/></i>
                         <p>Documentos</p>
                     </a>
                 </S.sideBar>
 
-                <a href="">
-                    <i> <IoMdSettings/> </i>
+                <a href="#" className='config'>
+                    <i> <AiFillSetting/> </i>
                     <p>Definições</p>
                 </a>
             </S.containerLeft>
