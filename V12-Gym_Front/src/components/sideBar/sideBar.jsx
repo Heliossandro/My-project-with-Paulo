@@ -14,11 +14,11 @@ function SideBar() {
     return(
         <S.containerLeft>
                 <S.sideBar>
-                    <a href="/atleta" className='item5'>
+                    <a href="/atleta">
                         <i><FaMale/></i>
                         <p>Atletas</p>
                     </a>
-                    <a href="#" className='s'>
+                    <a href="#">
                         <i><FaStore/></i>
                         <p>Artigos</p>
                     </a>

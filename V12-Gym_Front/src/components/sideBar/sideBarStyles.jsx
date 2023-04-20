@@ -15,7 +15,7 @@ export const containerLeft = styled.section`
         width: 4rem;
         text-decoration: none;
         padding: .8rem;
-        border: 1px solid red;
+       
     }
     
     .config{
@@ -43,6 +43,23 @@ export const sideBar = styled.aside`
         transform: scale(1.5);
         
     }
+    p{
+        font-size: .8rem;
+    }
+    
+    a{
+        padding: .5rem 0;
+    }
+
+    a:hover i{
+        color: black;
+    }
+
+    a:hover{
+        background-color: #868686;
+        border-right: 5px solid black;
+    }
+
     p{
         font-size: .8rem;
     }

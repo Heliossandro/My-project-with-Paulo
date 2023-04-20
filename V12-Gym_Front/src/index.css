@@ -7,3 +7,9 @@
 p{
     font-family: 'Secular One', sans-serif;
 }
+body {
+    background-image: url('/V12-Gym_Front/src/image/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }

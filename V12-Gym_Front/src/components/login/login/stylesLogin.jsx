@@ -7,6 +7,14 @@ export const containerContainer = styled.main`
     height: 100vh;
     background-color: #ccc;
     transition: all 1s;
+    @media screen and (orientation: landscape ){ 
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    transition: all 1s;
+
+}
 `
 
 export const containerMain = styled.main`
@@ -17,10 +25,11 @@ export const containerMain = styled.main`
     background-color: #fff;
     box-shadow: 4px 1px 20px 8px rgba(0, 0, 0, 0.30);
     border-radius: 1rem;
-
     @media screen and (max-width: 600px){
     width: 90%;
 }
+
+   
 `
 
 export const text = styled.section`
@@ -35,6 +44,7 @@ export const text = styled.section`
         width: 100%;
         margin-top: 0;
 }
+
 `
 
 export const containerImage = styled.section`
@@ -52,6 +62,8 @@ export const containerImage = styled.section`
     @media screen and (max-width: 600px){
         display: none;
    
+}
+
 }
 `
 
@@ -73,6 +85,9 @@ export const containerLogo = styled.div`
     @media screen and (max-width: 600px) {
       
     }
+    @media screen and (orientation: landscape ){ 
+    height: 15vh;  
+}
 `
 
 
@@ -116,6 +131,7 @@ export const containerform = styled.div`
         color: black;
         text-decoration: underline;
     }
+    
 
 `
 

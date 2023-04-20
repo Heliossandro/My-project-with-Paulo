@@ -4,6 +4,7 @@ import {Login} from './components/login/login/Login'
 import { CadastroGerente } from './components/login/cadastroDeGerentes/CadastroGerente';
 import { Home } from './components/pages/home/Home';
 import { Atleta } from './components/pages/atleta/Atleta';
+import { InscreverAtleta } from './components/pages/inscrever/InscreverAtleta';
 
 function App() {
 
@@ -11,10 +12,11 @@ function App() {
    <div>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Login/>}/>
+        <Route path='/' element={<Login/>} />
         <Route path='/cadastroGerente' element={<CadastroGerente/>}/>
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/atleta' element={<Atleta/>}/>
+        <Route path='/home' element={<Home/>} />
+        <Route path='/atleta' element={<Atleta/>} />
+        <Route path='/inscreverAtleta' element={<InscreverAtleta/>} />
       </Routes>
     </BrowserRouter>
 
