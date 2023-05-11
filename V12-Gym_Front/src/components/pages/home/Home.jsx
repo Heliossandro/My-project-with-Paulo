@@ -1,22 +1,16 @@
 import * as S from './styleHome'
 import { SideBar } from '../../sideBar/sideBar'
+import { Header } from '../../header/Header'
 
 
 
 function Home(){
     return(
         <S.container>
-
-
             <SideBar/>
             
             <S.containerContent>
-                <S.header>
-                    <div>
-                        <h1>Heliossando Afonso</h1>
-                    </div>
-                </S.header>
-
+               <Header />
                 <S.content>
 
                 </S.content>

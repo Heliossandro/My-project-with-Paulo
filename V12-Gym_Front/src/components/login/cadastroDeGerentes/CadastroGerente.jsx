@@ -35,8 +35,11 @@ function CadastroGerente() {
                             <input type="password" name='password' id='senha' required placeholder='Sua Senha'/>
                         </div>
 
-                        <div>
+                        <div >
+                            <Link to="/home">
                             <button>Criar Conta</button>
+                            </Link>
+                            
                         <Link to ="/">
                             <button>Voltar</button>
                         </Link>

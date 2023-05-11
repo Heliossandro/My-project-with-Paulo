@@ -18,8 +18,15 @@ export const containerMain = styled.main`
     box-shadow: 4px 1px 20px 8px rgba(0, 0, 0, 0.30);
     border-radius: 1rem;
 
-    @media screen and (max-width: 600px){
-    width: 90%;
+    @media screen and (max-width: 768px){
+    width: 80%;
+    
+}
+@media screen and (max-width: 600px){
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    
 }
 `
 
@@ -30,11 +37,24 @@ export const text = styled.section`
     margin-top: 2rem;
     align-items: center;
 
-    @media screen and (max-width: 600px){
-        height: 80vh;
+
+    @media screen and (max-width: 768px){
+        height: 60vh;
         width: 100%;
-        margin-top: 0;
+        padding-top: 1rem;
+        gap: 3rem;
 }
+
+@media screen and (max-width: 600px){
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+    
+}
+
+
+
 `
 
 export const containerImage = styled.section`
@@ -49,7 +69,7 @@ export const containerImage = styled.section`
         opacity: .8;
     }
 
-    @media screen and (max-width: 600px){
+    @media screen and (max-width: 768px){
         display: none;
    
 }
@@ -71,6 +91,17 @@ export const containerLogo = styled.div`
     }
 
     @media screen and (max-width: 600px) {
+        p{
+            font-size: 1.5rem;
+        }
+        img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: -1rem;
+            width: 15rem;
+            height: 9rem;
+        }
       
     }
 `
@@ -116,6 +147,49 @@ export const containerform = styled.div`
         color: black;
         text-decoration: underline;
     }
+    @media screen and (max-width: 600px){
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+     
+        div{
+            display: flex;
+        }
+   
+        a{
+        display: flex;
+        margin-top: -1.5rem;
+    }
+    input{
+        margin-bottom: 2rem;
+    }
+
+    }
+
+    @media screen and (max-width: 330px){
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+     
+        div{
+            display: flex;
+            width: 9rem;
+        }
+   
+        a{
+        display: flex;
+        
+    }
+
+    input{
+        margin-left: .4rem;
+        margin-bottom: 1rem;
+        width: 90%;
+    }
+    
+
+    }
+
 
 `
 
@@ -130,9 +204,18 @@ export const buttonEntrar = styled.button`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: all .4s;
 
-    :hover{
+        :hover{
+            color: #000000;
+        box-shadow: 0px 4px 7px #6565659b;
+        background-color: #ffffff;
+        transition: all 1s;
         cursor: pointer;
-        background-color: #000000ec;
+    }
+    
+
+    @media screen and (max-width: 330px){
+        height: 1.4rem;
+        width: 5rem;
     }
 `
 
@@ -149,6 +232,20 @@ export const buttonCriarConta = styled.button`
 
     :hover{
         cursor: pointer;
-        background-color: #ededed;
+        color: #fff;
+        box-shadow: 0px 4px 7px #6565659b;
+        background-color: #000;
+        transition: all 1s;
+    }
+
+    @media screen and (max-width: 600px){
+        
+    }
+
+    @media screen and (max-width: 330px){
+        height: 1.4rem;
+    width: 5rem;
+      
+
     }
 `

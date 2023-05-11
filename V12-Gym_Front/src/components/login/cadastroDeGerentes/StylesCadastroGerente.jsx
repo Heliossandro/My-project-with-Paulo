@@ -50,6 +50,10 @@ export const ConteudoDireita = styled.section`
         object-fit: cover ;
         border-radius: 0 1rem 1rem 0;   
     }
+    @media screen and (max-width: 600px){
+        display: none;
+   
+}
 `
 
 export const containerform = styled.div`
@@ -92,5 +96,21 @@ export const containerform = styled.div`
         border-radius: .3rem;
         margin: .7rem 0 0 0;
         transition: all .4s;
+        
     }
+    :hover{
+        background-color: #fff;
+        color: #000000;
+        transition: 1s;
+        
+    }
+   
+    @media screen and (max-width: 600px){
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        
+   
+}
 `

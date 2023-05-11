@@ -18,17 +18,17 @@ function Login(){
                     </S.containerLogo>
                         <S.containerform>
                             <form action="">
-                               <div>
+                               <div >
                                    <label htmlFor="nome">Email</label>
-                                   <input type="email" id='nome' placeholder='Insira o seu Email' required/>
+                                   <input  type="email" id='nome' placeholder='Insira o seu Email' required/>
                                </div>
-                               <div>
+                               <div >
                                    <label htmlFor="senha">Senha</label>
-                                   <input type="password" id='senha' placeholder='Insira a sua Senha' required/>
+                                   <input  type="password" id='senha' placeholder='Insira a sua Senha' required/>
                                </div>
                                <section>
                                <div>
-                                <Link to="/">
+                                <Link to="/home">
                                     <S.buttonEntrar>Entrar</S.buttonEntrar>    
                                 </Link>
                                                                                
