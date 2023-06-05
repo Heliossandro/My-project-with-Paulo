@@ -1,26 +1,31 @@
+
 import { IoPersonSharp } from 'react-icons/io5'
 
 import * as S from './styleHeader'
+import { useState } from 'react'
 
 function Header(props) {
+
     return(
-        <S.header>
-            <div>
-                <span>{props.name}</span>
-            </div>
-            <S.toRight>
-                <a href="">
-                <div>
-                    <h1>Heliossando Afonso</h1>
+        <>
+            <S.header>
+                <div className='text'>
+                    <span>{props.name}</span>
                 </div>
-                <div className='icon'>
-                    <IoPersonSharp size={27}/>
-                </div>
-                </a>
-                
-            </S.toRight>
-        </S.header>
+                <S.toRight>
+                    <a href="gerente">
+                    <div>
+                        <h1>Heliossando Afonso</h1>
+                    </div>
+                    <div className='icon'>
+                        <IoPersonSharp size={27}/>
+                    </div>
+                    </a>
+                </S.toRight>
+            </S.header>
+        </>
     )
 }
 
 export{ Header }
+

@@ -15,10 +15,11 @@ export const containerTable = styled.div`
     justify-content: center;
     width: 90%;
     margin: 0 auto;
-    margin-top: 4rem;
+    margin-top: 8rem;
+    margin-left: 15%;
 
     table {
-        width: 100%;
+        width: 90%;
         display: flex;
         flex-direction: column;
     }
@@ -64,13 +65,31 @@ export const containerTable = styled.div`
         font-size: 1rem;
     }
 
+    @media screen and (max-width: 600px){
+        td,th{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: .9rem;
+        }
+        .btn{
+            width: 8rem;
+            font-size: .9rem;
+
+        }
+        
+        .utilizacao{
+            
+            display: none;
+
+    }
+}
 `
 
 export const btn1 = styled.a`
     background-color: #000000f0;
     color: #fff;
     width: 5rem;
-    
     transition: all .4s;
     
 
@@ -93,4 +112,5 @@ export const btn2 = styled.a`
         background-color: #000;
         transition: 1s;
     }
+
 `

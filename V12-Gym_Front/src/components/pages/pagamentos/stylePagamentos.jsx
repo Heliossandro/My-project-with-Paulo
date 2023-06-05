@@ -1,98 +1,98 @@
 import styled from "styled-components";
 
 export const container = styled.main`
-    width: 100%;
-    display: flex;
-`
+  width: 100%;
+  display: flex;
+`;
 
 export const content = styled.section`
+  width: 100%;
+  height: 100%;
+  display: flex;
+ margin-top: 3rem;
+`;
+
+export const containerForm = styled.section`
+  color: red;
+  font-size: 0.8rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem;
+  margin-top: 4rem;
+  margin-left: 12%;
+
+  @media screen and (max-width: 1000px) {
     width: 100%;
-    height: 100%;
+    padding: 2rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  form {
     display: flex;
     justify-content: center;
     align-items: center;
-`
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 2px solid #0000;
+  }
 
-export const containerForm = styled.section`
-    width: 50%;
-    margin: 0 auto;
-    padding: 3rem;
-    
+  input,
+  textarea {
+    background-color: #f2f2f2;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
 
-    @media screen and (max-width: 1000px) {
-        width: 70%;
-        padding: 2rem;
-
-    }
-
-    @media screen and (max-width: 600px) {
-        width: 80%;
-        padding: 2rem;
-
-    }
-
-    form{
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        box-shadow: 2px solid #0000;
-    }
-
-    input, textarea{
-        background-color: #65656568;
-        outline: none;
-        border: 0px solid #00000030;
-        font-size: .9rem;
-        box-shadow: 2px solid #000000;
-    }
-
-    input:focus, textarea:focus{
-        border: 0px solid #0000006e;
-    }
-
-`
+  input:focus,
+  textarea:focus {
+    border-color: #000000;
+  }
+`;
 
 export const line1 = styled.div`
-    
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
-    input{
-        width: 20rem;
-    }
-`
+  input {
+    width: 100%;
+  }
+`;
 
 export const line2 = styled.div`
-    gap: 1rem;
+  gap: 1rem;
 
-    input{
-        width: 15rem;
-    }
-`
+  input {
+    width: 100%;
+  }
+`;
 
 export const line4 = styled.div`
-    
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
+  textarea {
+    border-radius: 4px;
+    width: 100%;
+    max-width: 100%;
+    max-height: 4rem;
+    padding: 1rem;
+    resize: vertical;
+  }
 
-    textarea{
-        border-radius: .3rem;
-        width: 20rem;
-        max-width: 100%;
-        max-height: 4rem;
-        padding: 1rem;
-    }
+  div {
+    text-align: right;
+  }
 
-    div{
-        text-align: right;
-    }
-
-    button{
+  button{
         margin-top: 1rem;
         border: none;
         background-color: transparent;
@@ -106,6 +106,7 @@ export const line4 = styled.div`
         font-weight: bold;
         background-color: #ffffff;
         color: #000000;
+        cursor: pointer;
 
     }
 
@@ -114,6 +115,13 @@ export const line4 = styled.div`
         box-shadow: 0px 4px 7px #6565659b;
         background-color: #000;
         transition:all 1s;
-        cursor: pointer;
+       
     }
 `
+    export const Formik = styled.form`
+    `
+    export const Field = styled.input`
+    `
+    
+    export const ErrorMessage = styled.span`
+    `

@@ -2,14 +2,12 @@ import styled from "styled-components";
 
 
 export const containerLeft = styled.section`
+    position: fixed;
     width: 5.5rem;
-    height: 85%;
-    border-right: 1px solid #cbcbcb; 
-    box-shadow: 0px 0px 20px #8d8d8d;
+    height: 100vh;
     align-items: center;
-
+    background-color: #cbcbcb;
     
-  
     p{
         color: #656565;
          text-decoration: none;
@@ -35,62 +33,76 @@ export const containerLeft = styled.section`
         margin: 1rem;
     }
     .p{
+
         font-size: .8rem;
     }
     i{
         transform: scale(1.5);
     }
-    @media screen and (max-width: 600px) {
-        display:none;      
+    @media screen and (max-width: 768px) {    
+        width: 3rem;
+
+        p{
+            display: none;
+        }
     }
 `
 
 export const sideBar = styled.aside`
-    background-color: #cbcbcb;
+  width: 5.5rem;
+  height: 89.33vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem ;
+  background-color: #cbcbcb;
+  
+  
+
+  i {
+    transform: scale(1.5);
+  }
+  gap: 50px;
+  padding-top: 4rem;
+
+  i {
+    transform: scale(1.5);
+  }
+  p {
+    font-size: 0.8rem;
+  }
+
+  a {
+    padding: 0.5rem 0;
+  }
+
+  a:hover i,
+  p {
+    color: #070707;
+    font-size: 1.2rem;
+    transition: 250ms;
+  }
+
+  a:hover {
     width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 1.3rem;
-    padding-top: 4rem;
+    background-color: #868686;
+    box-shadow: 0px 4px 7px #6565659b;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+  }
 
-    i{
-        transform: scale(1.5);
-    }
-    p{
-        font-size: .8rem;
-    }
+  a,
+  i,
+  p::before {
+    transition: 250ms;
+  }
 
-    a{
-        padding: .5rem 0;
-    }
+  p {
+    font-size: 0.8rem;
+  }
 
-    a:hover i,p{
-        color: #070707;
-        font-size: 1.2rem;
-        transition: 250ms;
-    }
-
-    a:hover {
-        width: 100%;
-        background-color: #868686;
-        box-shadow: 0px 4px 7px #6565659b;
-        border-bottom-right-radius: 5px;
-        border-top-right-radius: 5px;
-    }
-
-    p{
-        font-size: .8rem;
-    }
-    @media screen and (max-width: 600px) {
-        display:none;
-    }
-    .icone:hover{
-        
-        background-color: #000000b0;
-        border-radius: 30px;
-        width: 50%;
-        color: #ffffff;
-        transition: 1s;
-    }
-`
+  @media screen and (max-width: 768px) {
+    width: 2.5rem;
+    gap: 35px;
+  }
+`;

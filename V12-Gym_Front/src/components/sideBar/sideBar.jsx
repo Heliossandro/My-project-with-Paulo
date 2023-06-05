@@ -1,15 +1,13 @@
 import * as S from './sideBarStyles'
-import { FaMale } from "react-icons/fa";
-import { FaListAlt } from 'react-icons/fa';
-import { FaPoll } from 'react-icons/fa';
-import { FaStore } from 'react-icons/fa';
-import { FaMoneyCheck } from 'react-icons/fa';
+import { FaMale, FaListAlt, FaPoll, FaStore, FaMoneyCheck} from "react-icons/fa";
+
 import { AiFillSetting } from 'react-icons/ai'
 import { BsClockFill } from 'react-icons/bs'
 import { IoDocumentTextOutline } from 'react-icons/io5';
 import { ImPriceTag } from 'react-icons/im';
- 
+
 function SideBar() {
+    
     return(
         <S.containerLeft>
                 <S.sideBar>
@@ -17,13 +15,14 @@ function SideBar() {
                         <i><FaMale/></i>
                         <p>Atletas</p>
                     </a>
+
                     <a href="/artigos">
                         <i><FaStore/></i>
                         <p>Artigos</p>
                     </a>
-                    <a href="/precario">
+                    <a href="/mensalidade">
                         <i><ImPriceTag/></i>
-                        <p>Preçário</p>
+                        <p>Mensalidade</p>
                     </a>
                     <a href="/horario">
                         <i><BsClockFill/></i>
@@ -34,6 +33,7 @@ function SideBar() {
                         <p>Planos</p>
                     </a>
                     <a href="/pagamentos">
+
                         <i><FaMoneyCheck/></i>
                         <p>Pagamento</p>
                     </a>
@@ -41,19 +41,13 @@ function SideBar() {
                         <i><FaPoll/></i>
                         <p>Estatística</p>
                     </a>
-                    <a href="#">
+                    <a href="documentos">
                         <i><IoDocumentTextOutline/></i>
                         <p>Documentos</p>
                     </a>
                 </S.sideBar>
-                <div>
-                    <a href="/difinicoes">
-                     <i><AiFillSetting size={20}/></i>
-                     
-                    </a>
-                </div>
-                
-            </S.containerLeft>
+
+                </S.containerLeft>
     )
 }
 

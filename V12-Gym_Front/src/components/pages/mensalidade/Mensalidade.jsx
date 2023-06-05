@@ -1,7 +1,6 @@
 import { SideBar } from "../../sideBar/sideBar"
-import * as A from './stylePrecario'
+import * as A from './styleMensalidade'
 import * as S from '../home/styleHome'
-
 import { Header } from "../../header/Header"
 import  { ImPencil2 } from 'react-icons/im'
 
@@ -37,14 +36,14 @@ const dataTable = [
 
 ]
 
-function Precario() {
+function Mensalidade() {
     return(
        <A.container>
 
         <SideBar />
         
         <S.containerContent>
-            <Header name="Precario"/>
+            <Header name="mensalidade"/>
 
             <A.content>
                 <A.containerTable>
@@ -53,8 +52,8 @@ function Precario() {
                             <tr>
                                 <th >Planos</th>
                                 <th>Preço</th>
-                                <th>Observação</th>
-                                <th></th>
+                                <th className="observacao">Observação</th>
+                                <th>acção</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,19 +61,18 @@ function Precario() {
                                 <tr key={index}>
                                     <td>{td.Planos}</td>
                                     <td>{td.Preço}</td>
-                                    <td>{td.Observação}</td>
+                                    <td className="observacao">{td.Observação}</td>
                                     <td className="icone">{td.icone}</td>
                                 </tr>
                             ))}
-                    <A.buttonEntrar>Criar Plano</A.buttonEntrar>
+                    <A.buttonEntrar>Adicionar</A.buttonEntrar>
                         </tbody>
                     </table>
                 </A.containerTable>
             </A.content>
         </S.containerContent>
-
        </A.container>
     )
 }
 
-export {Precario}
+export {Mensalidade}

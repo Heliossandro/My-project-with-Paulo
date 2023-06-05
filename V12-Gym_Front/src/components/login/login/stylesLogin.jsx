@@ -7,6 +7,16 @@ export const containerContainer = styled.main`
     height: 100vh;
     background-color: #ccc;
     transition: all 1s;
+
+ @media screen and (orientation: landscape ){ 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    transition: all 1s;
+
+ }
 `
 
 export const containerMain = styled.main`
@@ -18,16 +28,19 @@ export const containerMain = styled.main`
     box-shadow: 4px 1px 20px 8px rgba(0, 0, 0, 0.30);
     border-radius: 1rem;
 
-    @media screen and (max-width: 768px){
+
+ @media screen and (max-width: 768px){
     width: 80%;
     
-}
-@media screen and (max-width: 600px){
+ }
+
+ @media screen and (max-width: 600px){
     width: 100%;
     height: 100%;
     border-radius: 0px;
     
-}
+ }
+
 `
 
 export const text = styled.section`
@@ -45,6 +58,7 @@ export const text = styled.section`
         gap: 3rem;
 }
 
+
 @media screen and (max-width: 600px){
     display: flex ;
     align-items: center;
@@ -52,7 +66,6 @@ export const text = styled.section`
     padding-top: 2rem;
     
 }
-
 
 
 `
@@ -73,6 +86,8 @@ export const containerImage = styled.section`
         display: none;
    
 }
+
+
 `
 
 export const containerLogo = styled.div`
@@ -104,6 +119,9 @@ export const containerLogo = styled.div`
         }
       
     }
+    @media screen and (orientation: landscape ){ 
+    height: 15vh;  
+}
 `
 
 
@@ -147,23 +165,19 @@ export const containerform = styled.div`
         color: black;
         text-decoration: underline;
     }
+
     @media screen and (max-width: 600px){
         display: flex;
         justify-content: center;
         align-items: center;    
-     
-        div{
+        
+        section{
             display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
         }
-   
-        a{
-        display: flex;
-        margin-top: -1.5rem;
-    }
-    input{
-        margin-bottom: 2rem;
-    }
-
     }
 
     @media screen and (max-width: 330px){
@@ -190,7 +204,6 @@ export const containerform = styled.div`
 
     }
 
-
 `
 
 export const buttonEntrar = styled.button`
@@ -202,13 +215,12 @@ export const buttonEntrar = styled.button`
     margin: .7rem .7rem 0 0;
     border-radius: .3rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transition: all .4s;
+    transition: background-color .5s ease;
 
         :hover{
             color: #000000;
         box-shadow: 0px 4px 7px #6565659b;
         background-color: #ffffff;
-        transition: all 1s;
         cursor: pointer;
     }
     
@@ -228,14 +240,14 @@ export const buttonCriarConta = styled.button`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: .3rem;
     margin: .7rem 0 0 0;
-    transition: all .4s;
+    transition: background-color .5s ease;
 
     :hover{
         cursor: pointer;
         color: #fff;
         box-shadow: 0px 4px 7px #6565659b;
         background-color: #000;
-        transition: all 1s;
+        
     }
 
     @media screen and (max-width: 600px){

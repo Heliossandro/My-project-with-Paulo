@@ -1,11 +1,13 @@
+import { Link } from 'react-router-dom'
 import logo from './../../../image/logo.png'
 import imgLogin from './../../../image/imgLogin.jpeg'
-import { Link } from 'react-router-dom'
-
 import * as S from './stylesLogin'
 
 
-function Login(){
+function Login () {
+    
+   
+   
     return(
        
        
@@ -17,25 +19,23 @@ function Login(){
                         <p>Bem-Vindo ao melhor Gym do Zango </p>
                     </S.containerLogo>
                         <S.containerform>
-                            <form action="">
-                               <div >
+
+                            <form>
+                               <div>
                                    <label htmlFor="nome">Email</label>
-                                   <input  type="email" id='nome' placeholder='Insira o seu Email' required/>
+                                   <input type="email" id='email' placeholder='Insira o seu Email' required/>
+
                                </div>
                                <div >
                                    <label htmlFor="senha">Senha</label>
-                                   <input  type="password" id='senha' placeholder='Insira a sua Senha' required/>
+                                   <input type="password" id='senha' placeholder='Insira a sua Senha' required/>
                                </div>
                                <section>
                                <div>
-                                <Link to="/home">
-                                    <S.buttonEntrar>Entrar</S.buttonEntrar>    
-                                </Link>
-                                                                               
+                                    <S.buttonEntrar type="submit">Entrar</S.buttonEntrar>                                                
                                 <Link to="/cadastroGerente"> 
                                     <S.buttonCriarConta>Criar Conta</S.buttonCriarConta>
                                 </Link>
-                            
                                    </div>
                                     <div> 
                                         <a href="">Esqueceu a senha?</a> 
@@ -52,6 +52,7 @@ function Login(){
         </S.containerContainer>
        
     )
+    
 }
 
 export { Login }

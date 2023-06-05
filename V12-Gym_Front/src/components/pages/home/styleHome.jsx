@@ -6,6 +6,8 @@ export const container = styled.main`
     width: 100%;
     height: 100vh;
     display: flex;
+    
+    
 `
 
 export const containerContent = styled.section`
@@ -17,4 +19,5 @@ export const containerContent = styled.section`
 export const content = styled.div`
     
 `
+
 

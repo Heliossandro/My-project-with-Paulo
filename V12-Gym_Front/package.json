@@ -9,12 +9,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/react-toastify": "^4.1.0",
+    "axios": "^1.4.0",
+    "formik": "^2.4.1",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.44.2",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.10.0",
-    "styled-components": "^5.3.9"
+    "react-toastify": "^9.1.2",
+    "styled-components": "^5.3.9",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

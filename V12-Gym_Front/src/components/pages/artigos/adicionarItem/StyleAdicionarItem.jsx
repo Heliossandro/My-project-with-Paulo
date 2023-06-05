@@ -68,16 +68,17 @@ export const containerForm = styled.section`
       box-shadow: 0px 0px 0px #00000030;
     }
   `
-  
 
 export const line1 = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
 
-  @media screen and (max-width: 600px) {
+  span{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+  }
+  @media screen and (max-width: 600px) {
     justify-content: center;
     flex-direction: column;
     width: 100%;
@@ -92,78 +93,13 @@ export const line1 = styled.div`
     width: 100%;
     font-size: 0.8rem;
   }
-`;
+`
 
-export const line2 = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  @media screen and (max-width: 600px) {
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    font-size: 0.8rem;
-  }
-
-  @media screen and (max-width: 320px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    font-size: 0.8rem;
-  }
-`;
-
-export const line3 = styled.div`
-  display: flex;
-  gap: 1rem;
-
-  > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  > div > div {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  > input {
-    width: 100%;
-  }
-
-  @media screen and (max-width: 600px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    font-size: 0.8rem;
-  }
-
-  @media screen and (max-width: 320px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    font-size: 0.8rem;
-  }
-`;
 
 export const line4 = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
-  .ipt {
-    display: flex;
-    gap: 1rem;
-  }
 
   input {
     display: flex;
@@ -178,33 +114,65 @@ export const line4 = styled.div`
     max-height: 4rem;
     padding: 1rem;
   }
+  .butoes{
+    display: flex;
+    gap: 1rem;
+  }
 
   div {
     text-align: right;
+  
+  }
+  input[type='file'] {
+    display: none;
+} 
+  label, input {
+    width: 10rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    box-shadow: 1px 1px 15px #00000030;
+    border-radius: 0.3rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #000000d8;;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color .5s ease;
+    
+    &:hover{
+        background-color: #fff;
+        color: #000000;   
+    }
+
+    
   }
 
-  button {
+  .ficheiro, button {
     border: none;
     background-color: transparent;
     box-shadow: 1px 1px 15px #00000030;
     border-radius: 0.3rem;
     width: 10rem;
     height: 2rem;
-    transition: all 0.2s;
     font-size: 0.9rem;
     text-transform: uppercase;
     font-weight: bold;
-    background-color: #000;
+    background-color: #000000d8;
     color: #fff;
     cursor: pointer;
+    transition: background-color .5s ease;
+
+    &:hover{
+        background-color: #fff;
+        color: #000000;   
+    }
   }
 
-  button:hover {
-    color: #fff;
-    box-shadow: 0px 4px 7px #6565659b;
-    background-color: #000;
-    transition: all 1s;
-  }
 
   button:hover {
     background-color: #fff;
@@ -213,19 +181,10 @@ export const line4 = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 100%;
     font-size: 0.8rem;
-select{ 
-  font-size: .8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
   }
 
   @media screen and (max-width: 320px) {
@@ -257,10 +216,3 @@ select{
     }
   }
   `
-
-
-export const form= styled.form`
-
-`
-export const inputContainer= styled.div`
-`

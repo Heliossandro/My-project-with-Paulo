@@ -12,40 +12,7 @@ const dataTable = [
         "hora": "5:30 até 12:00",
         "periodo": "Manhã",
         "icone": <ImPencil2     />
-    },
-    
-    {
-        "dia": "-Terça-feira",
-        "hora": "5:30 até 12:00",
-        "periodo": "Manhã",
-        "icone": <ImPencil2     />
-    },
-
-    {
-        "dia": "-Quarta-feira",
-        "hora": "5:30 até 12:00",
-        "periodo": "Manhã",
-        "icone": <ImPencil2     />
-    },
-
-    {
-        "dia": "-Quinta-feira",
-        "hora": "5:30 até 12:00",
-        "periodo": "Manhã",
-        "icone": <ImPencil2     />
-    },
-    {
-        "dia": "-Sexta-feira",
-        "hora": "5:30 até 12:00",
-        "periodo": "Manhã",
-        "icone": <ImPencil2     />
-    },
-    {
-        "dia": "-Sábado-feira",
-        "hora": "5:30 até 12:00",
-        "periodo": "Manhã",
-        "icone": <ImPencil2     />
-    },
+    }
 
 ]
 
@@ -66,7 +33,7 @@ function Horario(){
                                 <th >DIAS DA SEMANA</th>
                                 <th>HORA</th>
                                 <th>PERIODO</th>
-                                <th></th>
+                                <th>ACÇÃO</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -80,6 +47,7 @@ function Horario(){
                             ))}
                     
                         </tbody>
+                        <Z.buttonEntrar>Adicionar</Z.buttonEntrar>
                     </table>
                 </Z.containerTable>  
             </Z.content>
