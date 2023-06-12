@@ -33,9 +33,7 @@ function  CriacaoDePlano (){
     },
   });
 
-  const handleImageChange = (event) => {
-    formik.setFieldValue("ImageUrl", event.currentTarget.files[0]);
-  };
+ 
 
   return (
     <A.container>
@@ -63,7 +61,7 @@ function  CriacaoDePlano (){
 
               <A.line4>
                 <textarea
-                  name="desc"
+                  name="Desc"
                   id="desc"
                   cols="30"
                   rows="10"

@@ -1,108 +1,47 @@
 import styled from "styled-components";
 
-
 export const containerLeft = styled.section`
-    position: fixed;
-    width: 5.5rem;
-    height: 100vh;
-    align-items: center;
-    background-color: #cbcbcb;
-    
-    p{
-        color: #656565;
-         text-decoration: none;
-    }
-    a{
-        color: #656565;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        text-decoration: none;
-        transition: all .2s;
-        padding: 3rem;
-    }
-    
-
-    a:hover i{
-        color: #070707;
-    }
-
-    .config{
-        margin: 1rem;
-    }
-    .p{
-
-        font-size: .8rem;
-    }
-    i{
-        transform: scale(1.5);
-    }
-    @media screen and (max-width: 768px) {    
-        width: 3rem;
-
-        p{
-            display: none;
-        }
-    }
-`
-
-export const sideBar = styled.aside`
-  width: 5.5rem;
-  height: 89.33vh;
+  position: fixed;
+  width: 14rem;
+  height: 100vh;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  margin-top: 3rem ;
+  align-items: center;
   background-color: #cbcbcb;
-  
-  
 
-  i {
-    transform: scale(1.5);
-  }
-  gap: 50px;
-  padding-top: 4rem;
-
-  i {
-    transform: scale(1.5);
-  }
   p {
-    font-size: 0.8rem;
+    color: #656565;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
-
   a {
-    padding: 0.5rem 0;
+    padding: 1rem;
+    width: 80%;
+    color: #656565;
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    text-decoration: none;
+    transition: all 0.2s;
   }
 
-  a:hover i,
-  p {
+  a:hover i {
     color: #070707;
-    font-size: 1.2rem;
-    transition: 250ms;
   }
 
-  a:hover {
-    width: 100%;
-    background-color: #868686;
-    box-shadow: 0px 4px 7px #6565659b;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-  }
+  div{
+    display: flex;
+    flex-direction: column;
 
-  a,
-  i,
-  p::before {
-    transition: 250ms;
   }
-
-  p {
-    font-size: 0.8rem;
-  }
-
   @media screen and (max-width: 768px) {
-    width: 2.5rem;
-    gap: 35px;
+    width: 3rem;
+
+    p {
+      display: none;
+    }
   }
 `;

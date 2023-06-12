@@ -22,6 +22,10 @@ export const containerForm = styled.section`
   box-shadow: 0px 0px 5px #00000030;
   margin-top: 8rem;
   margin-left: 12%;
+  
+  
+
+  
 
   span {
     color: red;
@@ -74,10 +78,13 @@ export const line1 = styled.div`
   flex-direction: column;
   gap: 1rem;
 
-  span{
-    display: flex;
-    flex-direction: column;
-  }
+  form > div > div{
+        min-height: 1.7rem;
+        display: flex;
+        justify-content: center;
+    }
+
+
   @media screen and (max-width: 600px) {
     justify-content: center;
     flex-direction: column;
@@ -113,6 +120,7 @@ export const line4 = styled.div`
     max-width: 100%;
     max-height: 4rem;
     padding: 1rem;
+    resize: none;
   }
   .butoes{
     display: flex;
@@ -120,7 +128,7 @@ export const line4 = styled.div`
   }
 
   div {
-    text-align: right;
+    
   
   }
   input[type='file'] {
@@ -203,6 +211,7 @@ export const line4 = styled.div`
       max-height: 4rem;
       padding: 1rem;
       border-radius: 0.3rem;
+
     }
 
     button {

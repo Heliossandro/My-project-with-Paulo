@@ -3,43 +3,56 @@ import * as S from '../login/stylesLogin'
 import logo from "../../../image/logo.png"
 import img from "../../../image/imgLogin.jpeg";
 import { Link } from 'react-router-dom';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+import * as yup from 'yup';
+import { useFormik } from 'formik';
 
 function CadastroGerente() {
-  const initialValues = {
-    nomeCompleto: '',
-    email: '',
-    telefone: '',
-    password: ''
-  };
+  const urlCadastro = "http://localhost:4040/manager/create"
 
-  const validationSchema = Yup.object({
-    nomeCompleto: Yup.string()
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      phoneNumber: '',
+      password: ''
+    },
+    
+    validationSchema: yup.object({
+      name: yup.string()
       .required('O nome completo é obrigatório*')
       .test('dois-nomes', 'O nome completo deve conter pelo menos dois nomes', (value) => {
-        if (!value) return false; 
+        if (!value) return false;
         const names = value.trim().split(' ');
         return names.length >= 2;
       }),
-    email: Yup.string().when('emailCompleto', {
-      is: (value) => !!value && value.trim().length > 0,
-      then: Yup.string()
-        .email('Email inválido')
-        .required('Campo obrigatório')
-        .test('email-valido', 'Email inválido', (value) => {
-          const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-          return emailRegex.test(value);
-        }),
+      email: yup.string().required("Campo obrigatório").email("Email inválido"),
+      phoneNumber: yup.string().required("Campo obrigatório").min(9, "Digite um número válido").max(9, "Digite um número válido"),
+      password: yup.string().required("Campo obrigatório").min(6, "Digite um número válido"),
     }),
-    telefone: Yup.string().required('O número de telefone é obrigatório*').max(9,"número incorreto*").min(9,"número incorreto*"),
-    password: Yup.string().required('Campo obrigatório').min(6,"tem que conter 6 letras no mínimo")
-  });
+    onSubmit: async (data) => {
+        console.log(JSON.stringify(data));
+        try{
+          const response = await fetch(urlCadastro, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+          })
 
-  const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
-    resetForm();
-  };
+          if(response.ok){
+            const responseData = await response.json()
+            
+            console.log("Cadastro feito com sucesso");
+            console.log("Dados do cadstro: ", responseData);
+          }
+        }
+        catch (error){
+          console.log(error);
+        }
+    }
+
+  })
 
   return (
     <A.ContainerContainer>
@@ -49,44 +62,56 @@ function CadastroGerente() {
             <img src={logo} alt="" />
           </A.ContainerLogo>
           <div>
-            <Formik
-              initialValues={initialValues}
-              validationSchema={validationSchema}
-              onSubmit={handleSubmit}
-            >
-              <Form>
+              <form onSubmit={formik.handleSubmit}>
                 <div>
                   <label htmlFor="nome">Nome Completo</label>
-                  <Field type="text" name='nomeCompleto' id='nome' required placeholder='Nome Completo'/>
-                  <ErrorMessage name="nomeCompleto" component="div" className="error" />
+                  <input type="text" name='name' id='nome'  placeholder='Nome Completo'  onChange={formik.handleChange} value={formik.values.name} onBlur={formik.handleBlur}/>
+                  
+                  <div>
+                    {formik.touched.name && formik.errors.name ? (
+                      <span>{ formik.errors.name }</span>
+                    ):null}  
+                  </div>                  
                 </div>
 
                 <div>
                   <label htmlFor="email">Email</label>
-                  <Field type="email" name='email' id='email' required placeholder='Seu Email'/>
-                  <ErrorMessage name="email" component="div" className="error" />
+                  <input type="email" name='email' id='email'  placeholder='Seu Email' onChange={formik.handleChange} value={formik.values.email} onBlur={formik.handleBlur}/>
+                  <div>
+                    {formik.touched.email && formik.errors.email ? (
+                      <span>{ formik.errors.email }</span>
+                    ):null}  
+                  </div>
                 </div>
 
                 <div>
                   <label htmlFor="tel">Telefone</label>
-                  <Field type="text" name='telefone' id='tel' required placeholder='Nº Telefone'/>
-                  <ErrorMessage name="telefone" component="div" className="error" />
+                  <input type="text" name='phoneNumber' id='tel'  placeholder='Nº de telefone' onChange={formik.handleChange} value={formik.values.phoneNumber} onBlur={formik.handleBlur}/>
+                  <div>
+                    {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
+                      <span>{ formik.errors.phoneNumber }</span>
+                    ):null}  
+                  </div>
                 </div>
 
                 <div>
                   <label htmlFor="senha">Senha</label>
-                  <Field type="password" name='password' id='senha' required placeholder='Sua Senha'/>
-                  <ErrorMessage name="password" component="div" className="error" />
+                  <input type="password" name='password' id='senha'  placeholder='Sua Senha' onChange={formik.handleChange} value={formik.values.password} onBlur={formik.handleBlur}/>
+                  <div>
+                    {formik.touched.password && formik.errors.password ? (
+                      <span>{ formik.errors.password }</span>
+                    ):null}  
+                  </div>
                 </div>
 
-                <div >
+                <A.containerButton >
                   <button type="submit">Criar Conta</button>
                   <Link to="/">
-                    <button>Voltar</button>
+                      Voltar
                   </Link>
-                </div>
-              </Form>
-            </Formik>
+                    
+                </A.containerButton>
+              </form>
           </div>
         </A.containerform>
 

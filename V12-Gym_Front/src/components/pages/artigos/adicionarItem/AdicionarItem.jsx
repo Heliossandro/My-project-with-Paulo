@@ -109,6 +109,7 @@ function AdicionarItem() {
                   value={formik.values.desc}
                 ></textarea>
                 <div className='butoes'>
+                <div>
                 <label htmlFor="ImageUrl">Selecionar imagem</label>
                 <input 
                   className='ficheiro'
@@ -122,6 +123,7 @@ function AdicionarItem() {
                 {formik.errors.ImageUrl && formik.touched.ImageUrl && (
                   <span>{formik.errors.ImageUrl}</span>
                 )}
+               </div>
                   <button type="submit"> Adicionar </button>{" "}
                 </div>
               </A.line4>

@@ -11,17 +11,14 @@ import { useState, useEffect } from 'react';
 function Pagamentos() {
 
   const validationSchema = Yup.object({
-    nomeDoAtleta: Yup.string()
-      .required('Campo obrigatório')
-      .test('nome-existente', 'Nome do atleta inválido', function (value) {
-        return nomesExistentes.includes(value);
-      }),
+    name: Yup.string()
+      .required('Campo obrigatório'),
     quantidade: Yup.number().required('Campo obrigatório').positive('Deve ser um número positivo'),
     finalidade: Yup.string().required('Campo obrigatório'),
   });
 
   const initialValues = {
-    nomeDoAtleta: '',
+    name: '',
     quantidade: '',
     finalidade: '',
   };
@@ -29,7 +26,7 @@ function Pagamentos() {
   const handleSubmit = async (values) => {
     try {
       
-      const response = await axios.post('sua-url-api', values);
+      const response = await axios.post('http://localhost:4040/pagamento/create', values);
       console.log(response.data); 
       
     
@@ -43,7 +40,7 @@ function Pagamentos() {
 
   useEffect(() => {
     
-    axios.get('sua-url-api')
+    axios.get('http://localhost:4040/atleta/list')
       .then(response => {
         setNomesExistentes(response.data);
       })
@@ -68,18 +65,18 @@ function Pagamentos() {
                 <A.line1>
                     <Field
                         as="select"
-                        id="nomeDoAtleta"
-                        name="nomeDoAtleta"
+                        id="name"
+                        name="name"
                         placeholder="Nome do atleta"
                     >
                         <option value="">Selecione um nome</option>
                         {nomesExistentes.map((nome) => (
-                        <option key={nome.id} value={nome.nomeCompleto}>
-                            {nome.nomeCompleto}
+                        <option key={nome.id} value={nome.name}>
+                            {nome.name}
                         </option>
                         ))}
                     </Field>
-                    <ErrorMessage name="nomeDoAtleta" component="div" className="error" />
+                    <ErrorMessage name="name" component="div" className="error" />
                 </A.line1>
 
                 <A.line2>

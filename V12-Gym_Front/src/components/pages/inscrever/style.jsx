@@ -161,6 +161,7 @@ export const line4 = styled.div`
   gap: 1rem;
 
   .ipt {
+    width: 100%;
     display: flex;
     gap: 1rem;
   }
@@ -177,6 +178,7 @@ export const line4 = styled.div`
     max-width: 100%;
     max-height: 4rem;
     padding: 1rem;
+    resize: none;
   }
 
   div {
@@ -260,7 +262,14 @@ select{
 
 
 export const form= styled.form`
+display: flex;
+width: 100%;
+
+
 
 `
 export const inputContainer= styled.div`
 `
+export const button= styled.div`
+`
+

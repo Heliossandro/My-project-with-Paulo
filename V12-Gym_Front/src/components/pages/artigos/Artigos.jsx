@@ -18,20 +18,17 @@ function Artigos() {
       try {
         let response;
         if (filterType === 'TUDO') {
-          response = await axios.get('URL_DA_API/todos');
+          response = await axios.get('');
         } else if (filterType === 'NOVOS') {
-          response = await axios.get('URL_DA_API/novos');
+          response = await axios.get('');
         } else if (filterType === 'DISPONIVEIS') {
-          response = await axios.get('URL_DA_API/disponiveis');
+          response = await axios.get('');
         }
         setSearchResults(response.data);
       } catch (error) {
         console.error(error);
       }
     };
-
-    // Chama a função de busca sempre que a query de pesquisa ou o tipo de filtro mudar
-    fetchData();
   }, [searchQuery, filterType]);
 
   const handleSearchChange = (event) => {
@@ -70,16 +67,16 @@ function Artigos() {
               </li>
             </ul>
           </Q.containerOpcoes>
+          <form className='form' >
           <Q.Pesquisar>
               <div className="search-bar">
                 <input type="text" placeholder="Pesquisar" />
-                <button type="submit"
-                value={searchQuery}
-                onChange={handleSearchChange}
-                />
+                <button type="submit">
                   <FiSearch />
+                </button>
               </div>
             </Q.Pesquisar>
+
           <Q.resultados>
             {searchResults.map((produto) => (
               <Q.produto key={produto.id}>
@@ -89,6 +86,7 @@ function Artigos() {
               </Q.produto>
             ))}
           </Q.resultados>
+            </form>
         </Q.content>
       </S.containerContent>
     </Q.container>

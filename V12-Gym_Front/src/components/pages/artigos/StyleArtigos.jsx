@@ -70,6 +70,10 @@ a:hover{
     color: #00000063;
     transition: background-color .5s ease; 
 }
+.form{
+        display: flex;
+        flex-direction: column;
+    }
 
 `
 
@@ -82,53 +86,8 @@ export const content= styled.div`
     margin-top: 5rem;
     
 
-.pesquisar2{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        margin-left: -1.3rem;
-        gap: .5rem;
-        font-size: 1.5rem;
-        color: #858181 ;
-        cursor: pointer;       
-    }
-
-    .pesquisar{
-        width: 7rem;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        
-        border-bottom: 1px solid #858181;
-    }
-    .pesquisar1{
-        border: none;
-        outline: none;
-        font-size: 1.2rem;
-        cursor: pointer;
-    }
-
-    .pesquisar2,input:hover{
-        color: #000000;
-        transition: 1s;
-    }
-   
-    .pesquisar:hover{
-        border-bottom: 1px solid #000000;
-        transition: 1s;
-    }
 @media screen and (max-width: 600px) {
 
-    .pesquisar2,.pesquisar1{
-                
-                font-size: .7rem;
-            }
-
-            .pesquisar{
-                
-                width: 4rem;
-            }
 }
 
 @media screen and (max-width: 320px) {
@@ -137,26 +96,20 @@ export const content= styled.div`
     align-items: center;
     width: 60%;
 
-.pesquisar2,.pesquisar1{
-            
-            font-size: .7rem;
-        }
 
-        .pesquisar{
-            
-            width: 4rem;
-        }
 }
 `
 export const produto =styled.div`
 ` 
 export const resultados =styled.div`
 ` 
+
 export const Pesquisar= styled.div`
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        margin-left: 0%;
+
 
 .search-bar {
         display: flex;
@@ -193,6 +146,5 @@ export const Pesquisar= styled.div`
             }
         }
 
-
-   
 `
+

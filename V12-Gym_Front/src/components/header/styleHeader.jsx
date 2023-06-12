@@ -14,10 +14,14 @@ export const header = styled.header`
   padding: 0 2rem;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.205);
   background-color: #ffffff;
-
+  span {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.3rem;
+  }
   h1 {
     font-size: 1.1rem;
     color: #656565;
+
     padding: 0 0.5rem;
   }
 
@@ -54,40 +58,48 @@ export const header = styled.header`
       font-size: 1.4rem;
     }
   }
-`
-
-
+`;
 
 export const toRight = styled.div`
-
- /*    @media screen and (max-width: 768px){
+  /*    @media screen and (max-width: 768px){
         width: 100%;
         display: flex;
         justify-content: space-between;
     }
+     
  */
-`
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+
+  h1 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+  }
+`;
 
 export const hamburguer = styled.div`
-    width: 2.5rem;
-    height: 2rem;
-    background-color: #421f63;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: .4rem;
-    padding: .4rem;
-    visibility: hidden;
-    cursor: pointer;
+  width: 2.5rem;
+  height: 2rem;
+  background-color: #421f63;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.4rem;
+  visibility: hidden;
+  cursor: pointer;
 
-    div{
-        height: .1rem;
-        width: 100%;
-        background-color: #fff;
-    }
+  div {
+    height: 0.1rem;
+    width: 100%;
+    background-color: #fff;
+  }
 
-    @media screen and (max-width: 768px){
-        visibility: visible;
-    }
-`
+  @media screen and (max-width: 768px) {
+    visibility: visible;
+  }
+`;

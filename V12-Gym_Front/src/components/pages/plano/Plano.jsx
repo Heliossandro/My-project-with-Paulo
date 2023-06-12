@@ -32,20 +32,6 @@ const dataTable = [
 ];
 
 function Plano() {
-  const [selectedDiaSemana, setSelectedDiaSemana] = useState('');
-  const [planos, setPlanos] = useState([]);
-
-  const handleAbrirClick = (diaSemana) => {
-    // Buscar os planos do banco de dados local para o dia selecionado
-    const planosDoBanco = localStorage.getItem('Planos');
-    if (planosDoBanco) {
-      const planosPorDia = JSON.parse(planosDoBanco).filter(
-        (plano) => plano.DiaSemana === diaSemana
-      );
-      setPlanos(planosPorDia);
-    }
-    setSelectedDiaSemana(diaSemana);
-  };
 
   return (
     <A.container>
@@ -70,7 +56,7 @@ function Plano() {
                     <td className="utilizacao">{td.Plano}</td>
                     <td>
                       <div className="btn">
-                        <A.btn1 href="#" onClick={() => handleAbrirClick(td.DiaSemana)}>
+                        <A.btn1 href="#">
                           Abrir
                         </A.btn1>
                         <A.btn2 href="CriacaoDePlano">Novo</A.btn2>
@@ -78,17 +64,6 @@ function Plano() {
                     </td>
                   </tr>
                 ))}
-                {selectedDiaSemana && (
-                  <tr>
-                    <td colSpan="3">
-                      <ul>
-                        {planos.map((plano, index) => (
-                          <li key={index}>{plano.Plano}</li>
-                        ))}
-                      </ul>
-                    </td>
-                  </tr>
-                )}
               </tbody>
             </table>
           </A.containerTable>

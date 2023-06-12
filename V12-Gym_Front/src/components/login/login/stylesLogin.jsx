@@ -20,12 +20,11 @@ export const containerContainer = styled.main`
 `
 
 export const containerMain = styled.main`
-
     display: flex;
     justify-content: space-between;
     width: 50rem;
     background-color: #fff;
-    box-shadow: 4px 1px 20px 8px rgba(0, 0, 0, 0.30);
+    box-shadow: 4px 1px 20px 8px rgba(0, 0, 0, 0.158);
     border-radius: 1rem;
 
 
@@ -38,7 +37,6 @@ export const containerMain = styled.main`
     width: 100%;
     height: 100%;
     border-radius: 0px;
-    
  }
 
 `
@@ -73,6 +71,7 @@ export const text = styled.section`
 export const containerImage = styled.section`
     background-color: #000000;
     width: 50%;
+    height:100%;
     border-radius: 0 1rem 1rem 0;   
     
     img{

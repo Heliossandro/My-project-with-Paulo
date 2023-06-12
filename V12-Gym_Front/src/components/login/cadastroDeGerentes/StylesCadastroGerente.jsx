@@ -33,7 +33,7 @@ export const ContainerLogo = styled.div`
         align-items: center;
     
     img{
-        width: 8rem;
+        width: 7rem;
         height: 6rem;
     }
 
@@ -44,7 +44,7 @@ export const ConteudoDireita = styled.section`
     border-radius: 0 1rem 1rem 0;
     div{
         width: 100%;
-        height: 31rem;
+        height: 100%;
     }
 
     img{
@@ -52,13 +52,12 @@ export const ConteudoDireita = styled.section`
         height: 100%;
         border-radius: 0 1rem 1rem 0;
         opacity: .8;   
+        object-fit: cover;
     }
     background-color: #000000;
-    width: 50%;  
     
     @media screen and (max-width: 768px){
         display: none;
-   
 }
 `
 
@@ -69,16 +68,15 @@ export const containerform = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 
     label{
         font-size: 14px;
     }
 
-    form div{
+    form >div  div{
         display: flex;
-        flex-direction: column;
-        margin-bottom: .8rem;
+        flex-direction: column;/* 
+        margin-bottom: .8rem; */
         width: 19rem;
     }
 
@@ -94,17 +92,16 @@ export const containerform = styled.div`
         padding-left: .5rem;
     }
 
-    button{
-        background-color: black;
-        height: 1.8rem;
-        width: 100%;
-        border: none;
-        color: #ffffff;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: .3rem;
-        margin: .7rem 0 0 0;
-        transition: background-color .5s ease;
-        
+    form > div > div{
+        min-height: 1.7rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    form > div > div > span{
+        height: 100%;
+        font-size: .8rem;
+        color: red;
     }
 
     button:hover{
@@ -113,23 +110,36 @@ export const containerform = styled.div`
         box-shadow: 0px 4px 7px #6565659b;
         background-color: #ffffff;
     }
-    .ErrorMessage{
-        color: red;
-        font-size: 0.8rem;
-        width: 100%;
-        margin: 0 auto;
-        padding: 3rem;
-        margin-top: 4rem;
-        display: flex;
-    }
-    
    
     @media screen and (max-width: 768px){
         display:flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-        
-   
 }
+`
+
+export const containerButton = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+    button{
+        background-color: #000000;
+        border: none;
+        color: #ffffff;
+        padding: .5rem 1rem;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: .3rem;
+        transition: background-color .5s ease;
+        
+    }
+
+    a{
+        padding: .5rem 2rem;
+        background-color: #000000;
+        text-decoration: none;
+        color: #fff;
+        border-radius: .3rem;
+    }
 `

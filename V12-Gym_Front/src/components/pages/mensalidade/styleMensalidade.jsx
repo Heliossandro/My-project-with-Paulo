@@ -19,7 +19,7 @@ export const containerTable = styled.section`
     width: 90%;
     margin: 0 auto;
     margin-top: 6rem;
-    margin-left: 10%;
+    margin-left: 12%;
     
 
   table {
@@ -90,4 +90,86 @@ export const buttonEntrar = styled.button`
         font-size: .8rem;
         
     }
+`
+export const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ModalContent = styled.div`
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  width: 50%;
+`;
+
+export const ModalHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 6px;
+  
+
+  h2 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #000000;
+    }
+  }
+`
+
+export const ModalBody = styled.div`
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+`
+
+export const ModalFooter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+
+  button {
+    background-color: #000000;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &:hover {
+      background-color: #7c7c7c;
+    }
+  }
 `
