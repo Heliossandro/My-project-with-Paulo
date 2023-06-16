@@ -1,25 +1,36 @@
-import { IoPersonSharp } from "react-icons/io5";
+import { useEffect, useState } from 'react';
 
-import * as S from "./styleHeader";
+import { BiSearchAlt } from 'react-icons/bi';
+import * as S from './styleHeader';
 
 function Header(props) {
+  const [gerente, setGerente] = useState('');
+
+  useEffect(() => {
+    const fetchGerente = async () => {
+      try {
+        const response = await fetch('http://localhost:4040/manager/get'); 
+        const data = await response.json();
+        setGerente(data.name); 
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchGerente();
+  }, []);
+
   return (
     <>
-      <S.header>
-        <div className="text">
-          <span>{props.name}</span>
-        </div>
-        <S.toRight>
-          <a href="gerente">
-            <div>
-              <h1>HELIOSSANDO AFONSO</h1>
-            </div>
-            <div className="icon">
-              <IoPersonSharp size={26} />
-            </div>
-          </a>
-        </S.toRight>
-      </S.header>
+      <S.Header>
+    
+        <S.RightSide>
+          <S.Search>
+         <input type="Search" placeholder='pesquisar...'/>
+         <BiSearchAlt size={24}/>
+          </S.Search>
+        </S.RightSide>
+      </S.Header>
     </>
   );
 }

@@ -4,33 +4,42 @@ import * as A from './styleMensalidade';
 import * as S from '../home/styleHome';
 import { Header } from '../../header/Header';
 import { ImPencil2 } from 'react-icons/im';
+import { useEffect } from 'react';
 
-// Componente do Modal
-function Modal({ isOpen, onClose, onEdit, onDelete }) {
-  const [planos, setPlanos] = useState('');
-  const [preco, setPreco] = useState('');
-  const [observacao, setObservacao] = useState('');
+
+function Modal({ isOpen, onClose, onEdit, onDelete, onCriar, criar }) {
+  const [plan, setPlanos] = useState('');
+  const [price, setPreco] = useState(0);
+  const [observation, setObservacao] = useState('');
 
   const handleEdit = () => {
-    // Lógica para atualizar os dados
-    // Chame a função onEdit e passe os dados atualizados
-    onEdit({ planos, preco, observacao });
+    if (price < 0) {
+      alert("O preço não pode ser um número negativo.");
+      return;
+    }
 
-    // Limpe os campos após a edição
+    onEdit({ plan, price, observation });
     setPlanos('');
     setPreco('');
     setObservacao('');
+    onClose();
+  };
 
-    // Feche o modal
+  const handleCriar = () => {
+    if (price < 0) {
+      alert("O preço não pode ser um número negativo.");
+      return;
+    }
+
+    onCriar({ plan, price, observation });
+    setPlanos('');
+    setPreco('');
+    setObservacao('');
     onClose();
   };
 
   const handleDelete = () => {
-    // Lógica para excluir a coluna
-    // Chame a função onDelete
     onDelete();
-
-    // Feche o modal
     onClose();
   };
 
@@ -48,24 +57,24 @@ function Modal({ isOpen, onClose, onEdit, onDelete }) {
           <label>Planos</label>
           <input
             type="text"
-            value={planos}
+            value={plan}
             onChange={(e) => setPlanos(e.target.value)}
           />
           <label>Preço</label>
           <input
-            type="text"
-            value={preco}
+            type="number"
+            value={price}
             onChange={(e) => setPreco(e.target.value)}
           />
           <label>Observação</label>
           <input
             type="text"
-            value={observacao}
+            value={observation}
             onChange={(e) => setObservacao(e.target.value)}
           />
         </A.ModalBody>
         <A.ModalFooter>
-          <button onClick={handleEdit}>Salvar</button>
+          <button onClick={!criar ? handleEdit : handleCriar}>Salvar</button>
           <button onClick={handleDelete}>Apagar</button>
         </A.ModalFooter>
       </A.ModalContent>
@@ -73,64 +82,72 @@ function Modal({ isOpen, onClose, onEdit, onDelete }) {
   );
 }
 
-const dataTable = [
-  {
-    Planos: '-5 vezes na semana',
-    Preço: '10000kz',
-    Observação: 'Individual',
-    icone: <ImPencil2 />,
-  },
-  {
-    Planos: '-2 vezes na semana',
-    Preço: '16000kz ',
-    Observação: 'Personalizado',
-    icone: <ImPencil2 />,
-  },
-  {
-    Planos: '-3 vezes na semana',
-    Preço: '18000kz ',
-    Observação: 'Personalizado',
-    icone: <ImPencil2 />,
-  },
-  {
-    Planos: '-5 vezes na semana',
-    Preço: '20000kz ',
-    Observação: 'Personalizado',
-    icone: <ImPencil2 />,
-  },
-];
-
 function Mensalidade() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null);
+  const [monthly, setMonthly] = useState([]);
+  const [criar, setCriar] = useState(false);
 
-  const handleEdit = (data) => {
-    // Atualize os dados na tabela com os valores fornecidos em 'data'
-    // Implemente sua lógica aqui
+  useEffect(() => {
+    async function listarMensalidades() {
+      setMonthly(
+        await fetch('http://localhost:4040/monthlyPlan/list').then((res) =>
+          res.json()
+        )
+      );
+    }
+    listarMensalidades();
+  }, []);
 
-    // Exemplo de atualização da linha selecionada
-    const updatedTable = [...dataTable];
-    updatedTable[selectedRow] = {
-      Planos: data.planos,
-      Preço: data.preco,
-      Observação: data.observacao,
-      icone: <ImPencil2 />,
-    };
+  const handleEdit = async (data) => {
+    if (data.price < 0) {
+      alert("O preço não pode ser um número negativo.");
+      return;
+    }
 
-    // Atualize o estado da tabela com a linha atualizada
-    setDataTable(updatedTable);
+    console.log(data);
+    await fetch('http://localhost:4040/monthlyPlan/update/' + selectedRow, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        data,
+      }),
+    });
+
+    setMonthly(updatedTable);
   };
 
-  const handleDelete = () => {
-    // Lógica para excluir a linha selecionada
-    // Implemente sua lógica aqui
+  const handleDelete = async () => {
+    await fetch('http://localhost:4040/monthlyPlan/delete/' + selectedRow, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then((res) => res.json())
+      .then((res) => window.location.reload());
 
-    // Exemplo de exclusão da linha selecionada
-    const updatedTable = [...dataTable];
-    updatedTable.splice(selectedRow, 1);
+    setMonthly(updatedTable);
+  };
 
-    // Atualize o estado da tabela com a linha excluída
-    setDataTable(updatedTable);
+  const handleCriar = async (data) => {
+    if (data.price < 0) {
+      alert("O preço não pode ser um número negativo.");
+      return;
+    }
+
+    console.log(data);
+    await fetch('http://localhost:4040/monthlyPlan/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...data,
+      }),
+    }).then((res) => res.json())
+      .then((res) => window.location.reload());
   };
 
   return (
@@ -151,16 +168,17 @@ function Mensalidade() {
                   <th>ação</th>
                 </tr>
               </thead>
+
               <tbody>
-                {dataTable.map((td, index) => (
-                  <tr key={index}>
-                    <td>{td.Planos}</td>
-                    <td>{td.Preço}</td>
-                    <td className="observacao">{td.Observação}</td>
+                {monthly.map((month) => (
+                  <tr key={month.id}>
+                    <td>{month.plan}</td>
+                    <td>{month.price}</td>
+                    <td className="observacao">{month.observation}</td>
                     <td className="icone">
                       <ImPencil2
                         onClick={() => {
-                          setSelectedRow(index);
+                          setSelectedRow(month.id);
                           setIsModalOpen(true);
                         }}
                       />
@@ -169,7 +187,14 @@ function Mensalidade() {
                 ))}
               </tbody>
             </table>
-            <A.buttonEntrar>Adicionar</A.buttonEntrar>
+            <A.buttonEntrar
+              onClick={() => {
+                setIsModalOpen(true);
+                setCriar(true);
+              }}
+            >
+              Adicionar
+            </A.buttonEntrar>
           </A.containerTable>
         </A.content>
       </S.containerContent>
@@ -177,8 +202,10 @@ function Mensalidade() {
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        onEdit={handleEdit}
+        onEdit={!criar ? handleEdit : null}
+        onCriar={criar ? handleCriar : null}
         onDelete={handleDelete}
+        criar={criar}
       />
     </A.container>
   );

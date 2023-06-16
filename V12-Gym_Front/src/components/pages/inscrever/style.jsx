@@ -82,6 +82,7 @@ export const line1 = styled.div`
     flex-direction: column;
     width: 100%;
     font-size: 0.8rem;
+    margin-bottom
   }
 
   @media screen and (max-width: 320px) {
@@ -92,7 +93,7 @@ export const line1 = styled.div`
     width: 100%;
     font-size: 0.8rem;
   }
-`;
+`
 
 export const line2 = styled.div`
   display: flex;

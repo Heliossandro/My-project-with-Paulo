@@ -15,10 +15,13 @@ import { ImPriceTag } from "react-icons/im";
 function SideBar() {
   return (
     <S.containerLeft>
+      <div className="divmae">
+
       <div>
+      <span>V12 Gym</span>
       <a href="/atleta">
         <i>
-          <FaMale />
+          <FaMale size={27}/>
         </i>
         <p>Atletas</p>
       </a>
@@ -26,7 +29,7 @@ function SideBar() {
       <div>
       <a href="/artigos">
         <i>
-          <FaStore />
+          <FaStore size={27}/>
         </i>
         <p>Artigos</p>
       </a>
@@ -35,7 +38,7 @@ function SideBar() {
       <div>
       <a href="/horario">
         <i>
-          <BsClockFill />
+          <BsClockFill size={20}/>
         </i>
         <p>Horário</p>
       </a>
@@ -44,7 +47,7 @@ function SideBar() {
         <div>  
       <a href="/mensalidade">
         <i>
-          <ImPriceTag />
+          <ImPriceTag size={20}/>
         </i>
         <p>Mensalidade</p>
       </a>
@@ -54,7 +57,7 @@ function SideBar() {
         <div>
       <a href="/plano">
         <i>
-          <FaListAlt />
+          <FaListAlt size={20}/>
         </i>
         <p>Planos</p>
       </a>
@@ -63,16 +66,16 @@ function SideBar() {
         <div>
       <a href="/pagamentos">
         <i>
-          <FaMoneyCheck />
+          <FaMoneyCheck size={20}/>
         </i>
         <p>Pagamento</p>
       </a>
         </div>
   
         <div>
-      <a href="#">
+      <a href="/estatisticas">
         <i>
-          <FaPoll />
+          <FaPoll size={20}/>
         </i>
         <p>Estatística</p>
       </a>
@@ -81,12 +84,13 @@ function SideBar() {
         <div>
       <a href="documentos">
         <i>
-          <IoDocumentTextOutline />
+          <IoDocumentTextOutline size={20}/>
         </i>
         <p>Documentos</p>
       </a>
         
         </div>
+      </div>
 
     </S.containerLeft>
   );

@@ -2,12 +2,12 @@ import { SideBar } from '../../sideBar/sideBar';
 import { Header } from '../../header/Header';
 import * as A from './style';
 import * as S from '../home/styleHome';
-import { useState } from 'react';
 import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup';
-import axios from 'axios';
+import { useState } from 'react';
 
 function InscreverAtleta() {
+  const urlCadastro = "http://localhost:4040/atleta/create"
   const validationSchema = Yup.object().shape({
     name: Yup.string()
       .required('O nome completo é obrigatório*')
@@ -42,9 +42,11 @@ function InscreverAtleta() {
       }),
     gender: Yup.string().required('Selecione o gender*'),
     kindOfTraining: Yup.string().oneOf(['Musculacao', 'Aerobica', 'Box', 'Kickbox'], 'Selecione um tipo de treino*').required('Selecione o tipo de treino*'),
-   plan_value: Yup.string().oneOf(['10.000kz', '16.000kz', '18.000kz', '20.000kz'], 'Selecione um plano*').required('Selecione o plano*'),
+    plan_value: Yup.string().oneOf(['10.000kz', '16.000kz', '18.000kz', '20.000kz'], 'Selecione um plano*').required('Selecione o plano*'),
     description: Yup.string().optional(),
   });
+
+  const [error, setError] = useState(null); // Adicione o estado para lidar com erros
 
   const formik = useFormik({
     initialValues: {
@@ -56,21 +58,32 @@ function InscreverAtleta() {
       age: null,
       gender: '',
       kindOfTraining: '',
-     plan_value: '',
+      plan_value: '',
       description: '',
     },
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        await axios.post('', values);
+        const response = await fetch(urlCadastro, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values), // Enviar os valores como JSON no corpo da requisição
+        });
 
-        alert('Atleta inserido com sucesso!');
-
-        resetForm();
+        if (response.ok) {
+          const responseData = await response.json();
+          console.log("Dados do cadastro: ", responseData);
+          resetForm();
+        } else {
+          // Verificar erros de resposta da API
+          const errorData = await response.json();
+          throw new Error(errorData.message);
+        }
       } catch (error) {
-        console.error(error);
-
-        alert('Ocorreu um erro ao inserir o atleta. Por favor, tente novamente.');
+        console.log(error);
+        setError(error.message);
       }
     },
   });
@@ -82,11 +95,11 @@ function InscreverAtleta() {
         <Header name="Atleta" />
 
         <A.containerForm>
-          
+          <form onSubmit={formik.handleSubmit}>
+            {/* Renderizar o erro, se houver */}
+            {error && <div>{error}</div>}
 
-          <form>
             <A.line1>
-             
               <input
                 type="text"
                 id="name"
@@ -94,13 +107,11 @@ function InscreverAtleta() {
                 placeholder='Nome Completo'
                 value={formik.values.name}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
               />
               {formik.touched.name && formik.errors.name && (
                 <A.error>{formik.errors.name}</A.error>
               )}
 
-            
               <input
                 type="email"
                 id="email"
@@ -108,13 +119,11 @@ function InscreverAtleta() {
                 placeholder='Email'
                 value={formik.values.email}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                />
+              />
               {formik.touched.email && formik.errors.email && (
-                  <A.error>{formik.errors.email}</A.error>
-                  )}
-        
-                  </A.line1>
+                <A.error>{formik.errors.email}</A.error>
+              )}
+            </A.line1>
 
             <A.line2>
               <input
@@ -124,12 +133,11 @@ function InscreverAtleta() {
                 placeholder='phone_number'
                 value={formik.values.phone_number}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
               />
               {formik.touched.phone_number && formik.errors.phone_number && (
                 <A.error>{formik.errors.phone_number}</A.error>
               )}
-              
+
               <input
                 type="text"
                 id="nif"
@@ -137,16 +145,13 @@ function InscreverAtleta() {
                 placeholder='NIF'
                 value={formik.values.nif}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
               />
               {formik.touched.nif && formik.errors.nif && (
                 <A.error>{formik.errors.nif}</A.error>
               )}
-
             </A.line2>
 
             <A.line3>
-              
               <input
                 type="text"
                 id="morada"
@@ -154,52 +159,47 @@ function InscreverAtleta() {
                 placeholder='Morada'
                 value={formik.values.morada}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
               />
               {formik.touched.morada && formik.errors.morada && (
                 <A.error>{formik.errors.morada}</A.error>
               )}
-            <div>
-              <input
-                type="date"
-                id="age"
-                name="age"
-                value={formik.values.age}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-              />
-              {formik.touched.age && formik.errors.age && (
-                <A.error>{formik.errors.age}</A.error>
-              )}
-            </div>
 
-            <div>
-              <select
-                id="gender"
-                name="gender"
-                value={formik.values.gender}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-              >
-                <option value="">gender</option>
-                <option value="Masculino">M</option>
-                <option value="Feminino">F</option>
-              </select>
-              {formik.touched.gender && formik.errors.gender && (
-                <A.error>{formik.errors.gender}</A.error>
-              )}
-            </div>
+              <div>
+                <input
+                  type="date"
+                  id="age"
+                  name="age"
+                  value={formik.values.age}
+                  onChange={formik.handleChange}
+                />
+                {formik.touched.age && formik.errors.age && (
+                  <A.error>{formik.errors.age}</A.error>
+                )}
+              </div>
+
+              <div>
+                <select
+                  id="gender"
+                  name="gender"
+                  value={formik.values.gender}
+                  onChange={formik.handleChange}
+                >
+                  <option value="">gender</option>
+                  <option value="Masculino">M</option>
+                  <option value="Feminino">F</option>
+                </select>
+                {formik.touched.gender && formik.errors.gender && (
+                  <A.error>{formik.errors.gender}</A.error>
+                )}
+              </div>
             </A.line3>
 
-
-                <A.form>
-
+            <A.form>
               <select
                 id="kindOfTraining"
                 name="kindOfTraining"
                 value={formik.values.kindOfTraining}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
               >
                 <option value="">Plano de Treino</option>
                 <option value="Musculacao">Musculação</option>
@@ -211,41 +211,33 @@ function InscreverAtleta() {
                 <A.error>{formik.errors.kindOfTraining}</A.error>
               )}
 
-            
               <select
-                id="precario"
-                name="precario"
-                value={formik.values.precario}
+                id="plan_value"
+                name="plan_value"
+                value={formik.values.plan_value}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                >
-                <option value="">Precario</option>
+              >
+                <option value="">Preçário</option>
                 <option value="10.000kz">10.000Kz</option>
                 <option value="16.000kz">16.000Kz</option>
                 <option value="18.000kz">18.000Kz</option>
                 <option value="20.000kz">20.000Kz</option>
               </select>
-              {formik.touched.precario && formik.errors.precario && (
-                  <A.error>{formik.errors.precario}</A.error>
-                  )}
-                </A.form>
+              {formik.touched.plan_value && formik.errors.plan_value && (
+                <A.error>{formik.errors.plan_value}</A.error>
+              )}
+            </A.form>
+
             <A.line4>
-
-                
-
-            
               <textarea
                 id="description"
                 name="description"
-                placeholder='descriptionrição'
+                placeholder='descrição'
                 value={formik.values.description}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                /> 
-            
-            <button type="submit">Inscrever</button>
-                </A.line4>
-
+              />
+              <button type="submit">Inscrever</button>
+            </A.line4>
           </form>
         </A.containerForm>
       </S.containerContent>
@@ -253,4 +245,4 @@ function InscreverAtleta() {
   );
 }
 
-export {InscreverAtleta};
+export { InscreverAtleta };

@@ -11,7 +11,8 @@ import { InscreverAtleta } from "./components/pages/inscrever/InscreverAtleta";
 import { Plano } from "./components/pages/plano/Plano";
 import { CriacaoDePlano } from "./components/pages/plano/criacaoDePlano/CriacaoDePlano";
 import { Documentos } from "./components/pages/documentos/Documentos";
-import { Pagamentos } from "./components/pages/pagamentos/Pagamentos";
+import { Pagamentos } from "./components/pages/pagamentos/Pagamentos"
+import { Estatisticas } from "./components/pages/estatisticas/Estatisticas"
 import { AdicionarItem } from "./components/pages/artigos/adicionarItem/AdicionarItem";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -40,6 +41,7 @@ function App() {
           <Route path="/pagamentos" element={<Pagamentos />} />
           <Route path="/documentos" element={<Documentos />} />
           <Route path="/adicionarItem" element={<AdicionarItem />} />
+          <Route path="/Estatisticas" element={<Estatisticas />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -31,27 +31,14 @@ function Atleta() {
   return (
     <A.Container>
       <SideBar />
+      <A.Main>
+      <Header name="Atletas" />
       <S.containerContent>
-        <Header name="Atletas" />
+    
         <A.Content>
           <A.ContainerTable>
-            <form>
-              <A.FirstSection>
-                <section>
-                  <input
-                    //type="search"
-                    name=""
-                    id=""
-                    placeholder="Pesquisar..."
-                  />
-                  <CiSearch />
-                </section>
-              </A.FirstSection>
-              <A.ContainerButtom>
-                <a href="/inscreverAtleta">Inscrever</a>
-              </A.ContainerButtom>
-            </form>
-
+            
+            
             <table id="tabela-pedidos">
               <thead>
                 <tr>
@@ -64,13 +51,13 @@ function Atleta() {
                 </tr>
               </thead>
               <tbody>
-                {dataTable.map((td) => (
-                  <tr key={td.id}>
-                    <td>{td.name}</td>
-                    <td className="id">{td.gender}</td>
-                    <td className="">{td.kindOfTraining}</td>
-                    <td className="id1">{td.email}</td>
-                    <td>{td.phone_number}</td>
+                {dataTable?.map((td) => (
+                  <tr key={td?.id}>
+                    <td>{td?.name}</td>
+                    <td className="id">{td?.gender}</td>
+                    <td className="">{td?.kindOfTraining}</td>
+                    <td className="id1">{td?.email}</td>
+                    <td>{td?.phone_number}</td>
                     <td className="icone">
                       <button onClick={() => handleEditField(td)}>
                         <ImPencil2 />
@@ -83,6 +70,7 @@ function Atleta() {
           </A.ContainerTable>
         </A.Content>
       </S.containerContent>
+      </A.Main>
     </A.Container>
   );
 }

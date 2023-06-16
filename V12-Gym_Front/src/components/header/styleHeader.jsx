@@ -1,105 +1,38 @@
 import styled from "styled-components";
 
-export const header = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 4rem;
-  width: 100%;
-  padding: 0 2rem;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.205);
-  background-color: #ffffff;
-  span {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.3rem;
-  }
-  h1 {
-    font-size: 1.1rem;
-    color: #656565;
-
-    padding: 0 0.5rem;
-  }
-
-  div {
-    display: flex;
-    align-items: center;
-    color: #656565;
-  }
-
-  a {
-    display: flex;
-    text-decoration: none;
-  }
-
-  .text {
-    font-size: 2rem;
-    text-transform: uppercase;
-  }
-
-  @media screen and (max-width: 768px) {
-    h1 {
-      display: none;
-    }
-    .text {
-      font-size: 1.7rem;
-    }
-  }
-
-  @media screen and (max-width: 300px) {
-    h1 {
-      display: none;
-    }
-    .text {
-      font-size: 1.4rem;
-    }
-  }
-`;
-
-export const toRight = styled.div`
-  /*    @media screen and (max-width: 768px){
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-     
- */
-
-  a {
-    display: flex;
-    align-items: center;
-  }
-
-  h1 {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-  }
-`;
-
-export const hamburguer = styled.div`
-  width: 2.5rem;
-  height: 2rem;
-  background-color: #421f63;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 0.4rem;
-  visibility: hidden;
-  cursor: pointer;
-
-  div {
-    height: 0.1rem;
+export const Header = styled.header`
     width: 100%;
+    width: 100rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #fff;
-  }
+    padding: 1rem;
+    border-radius: 1rem;
 
-  @media screen and (max-width: 768px) {
-    visibility: visible;
+    @media screen and (max-width: 768px) {
+    width: 20%;
+  
+   
+  }
+  `;
+
+export const RightSide = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const Search = styled.div`
+display: flex;
+justify-content: space-between;
+border-radius: 20rem;
+padding: 1rem;
+align-items: center;
+width: 20rem;
+background-color: #eee;
+  input{
+    border:none;
+    background-color: transparent;
+    outline: none;
   }
 `;

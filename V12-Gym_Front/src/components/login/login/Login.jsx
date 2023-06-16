@@ -1,3 +1,4 @@
+import { toast, ToastContainer } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom'
 import logo from './../../../image/logo.png'
 import imgLogin from './../../../image/imgLogin.jpeg'
@@ -22,7 +23,7 @@ function Login () {
         password: yup.string().required(),
     }), 
 
-    onSubmit: async (data) => {
+    onSubmit: async (data, {resetForm}) => {
         try{
             const response = await fetch(urlLogin, {
                 method: "POST",
@@ -32,20 +33,26 @@ function Login () {
                 body: JSON.stringify(data)
             })
 
-            if(response.ok){
+            if (response.ok) {
                 const responseData = await response.json()
-                console.log("Logado com sucesso");
-                console.log("Dados do login", responseData);
-                navigate("/home")
+      
+                toast.success('Bem vindo');
+                console.log("Dados do cadastro: ", responseData);
+              } else {
+                toast.error('Senha ou email errado, tente novamente.'); 
+                resetForm();
+              }
+              resetForm({
+                values: {
+                  email: '',
+                  password: ''
+                }
+              })
+              navigate('/home')
             }
-
-            else{
-                console.log("Erro de login");
-            }
-        }
-
-        catch (error){
-            console.log(error);
+              catch (error) {
+                console.log(error);
+                toast.error('Senha ou email errado, tente novamente.'); 
         }
     }
 
@@ -65,12 +72,11 @@ function Login () {
                             <form onSubmit={formik.handleSubmit}>
                                <div>
                                    <label htmlFor="nome">Email</label>
-                                   <input type="email" id='email' name='email' placeholder='Insira o seu Email' onChange={formik.handleChange} value={formik.values.email}/>
-
+                                   <input type="email" id='email' name='email' placeholder='Insira o seu Email' onChange={formik.handleChange} value={formik.values.email} onBlur={formik.handleBlur} />
                                </div>
                                <div >
                                    <label htmlFor="senha">Senha</label>
-                                   <input type="password" id='senha' name='password' placeholder='Insira a sua Senha'  onChange={formik.handleChange} value={formik.values.password}/>
+                                   <input type="password" id='senha' name='password' placeholder='Insira a sua Senha'  onChange={formik.handleChange} value={formik.values.password} onBlur={formik.handleBlur} />
                                </div>
                                <section>
                                <div>
